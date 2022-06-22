@@ -1,6 +1,5 @@
 package com.example.TBlog.Repository;
 
-
 import com.example.TBlog.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,8 +24,8 @@ public class UsersRepository {
         String mysql="select * from Users where user_id= ?";
         Users u =  jdbcTemplate.queryForObject(mysql, new UsersRowMapper(), id );
         return u;
-    }
 
+    }
     public void saveNewUsers(Users users){
         String mySql = "insert into users(user_id, user_role, user_name) values (?,?,?)";
         int num = jdbcTemplate.update(mySql, users.getUser_id(), users.getUser_role(), users.getUser_name());

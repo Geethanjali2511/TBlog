@@ -1,4 +1,4 @@
-package com.example.TBlog.repository;
+package com.example.TBlog.Repository;
 
 import com.example.TBlog.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
