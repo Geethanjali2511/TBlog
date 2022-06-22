@@ -1,7 +1,7 @@
 package com.example.TBlog.Controller;
 
 
-import com.example.TBlog.Services.UsersServices;
+import com.example.TBlog.Services.UsersService;
 import com.example.TBlog.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class UserController {
+public class UsersController {
 
     @Autowired
-    UsersServices usersServices;
+    UsersService usersService;
 
 
     @GetMapping("/users")
     public List<Users> getAllUsers(){
-        return usersServices.getAllUsers();
+        return usersService.getAllUsers();
     }
 
     @PostMapping("/users")
     public ResponseEntity<?> createUsers(@RequestBody Users users){
-        usersServices.createUsers(users);
+        usersService.createUsers(users);
         return ResponseEntity.status(HttpStatus.CREATED).body(users);
     }
 
     @GetMapping("/users/{id}")
     Users findUsersByID(@PathVariable int id) {
-        return usersServices.getUsersById(id);
+        return usersService.getUsersById(id);
     }
 }
