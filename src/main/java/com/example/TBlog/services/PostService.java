@@ -1,9 +1,7 @@
-package com.example.TBlog.Services;
+package com.example.TBlog.services;
 
-import com.example.TBlog.Repository.PostRepository;
-import com.example.TBlog.Repository.UsersRepository;
+import com.example.TBlog.repository.PostRepository;
 import com.example.TBlog.model.Post;
-import com.example.TBlog.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

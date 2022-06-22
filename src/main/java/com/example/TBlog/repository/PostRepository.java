@@ -1,7 +1,6 @@
-package com.example.TBlog.Repository;
+package com.example.TBlog.repository;
 
 import com.example.TBlog.model.Post;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 

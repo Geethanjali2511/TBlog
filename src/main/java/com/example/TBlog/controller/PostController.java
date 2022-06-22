@@ -1,9 +1,7 @@
-package com.example.TBlog.Controller;
+package com.example.TBlog.controller;
 
-import com.example.TBlog.Repository.PostRepository;
-import com.example.TBlog.Services.PostService;
+import com.example.TBlog.services.PostService;
 import com.example.TBlog.model.Post;
-import com.example.TBlog.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
