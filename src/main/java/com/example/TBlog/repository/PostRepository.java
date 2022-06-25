@@ -35,6 +35,25 @@ public class PostRepository {
         return p;
     }
 
+
+    public Post getPostByTitle(int id) {
+        String mysql = "select * from Post where post_id = ?";
+        Post p = jdbcTemplate.queryForObject(mysql, new PostRowMapper(), id);
+        return p;
+    }
+
+    public void deletePostById(int id) {
+        String mysql = "delete from post where post_id = ?";
+        jdbcTemplate.update(mysql,id);
+    }
+
+
+
+    public void updatePostByTitle(String post_title, int id){
+        String mySql = "update post set post_title = ? where post_id = ?";
+        jdbcTemplate.update(mySql, post_title, id);
+    }
+
     public void saveNewPost(Post post) {
         String mysql = "insert into post(post_id, post_date, post_title, post_content, post_url, post_video, post_image, user_id) values(?,?,?,?,?,?,?,?)";
         int num = jdbcTemplate.update(mysql, post.getPost_id(), post.getPost_date(), post.getPost_title(), post.getPost_content(), post.getPost_url(), post.getPost_video(), post.getPost_image(), post.getUser_id());
@@ -58,5 +77,5 @@ public class PostRepository {
         }
 
 
-        }
     }
+}
